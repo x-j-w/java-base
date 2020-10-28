@@ -1,4 +1,4 @@
-package com.example.base.设计模式.观察者模式;
+package com.example.base.设计模式.关于监听观察回调模式.观察者模式;
 
 /**
  * @author jiwei.xue

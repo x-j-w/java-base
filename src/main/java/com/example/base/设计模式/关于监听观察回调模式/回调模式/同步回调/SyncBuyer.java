@@ -1,9 +1,8 @@
-package com.example.base.设计模式.回调模式.异步回调;
+package com.example.base.设计模式.关于监听观察回调模式.回调模式.同步回调;
 
 import java.util.Random;
 
-
-public class NoSyncBuyer implements OrderResult {
+public class SyncBuyer implements OrderResult{
 
     private Store store;
 
@@ -24,7 +23,7 @@ public class NoSyncBuyer implements OrderResult {
     }
 
 
-    public NoSyncBuyer(Store store, String buyerName, String goodsName) {
+    public SyncBuyer(Store store, String buyerName, String goodsName) {
         this.store = store;
         this.buyerName = buyerName;
         this.goodsName = goodsName;
@@ -32,10 +31,7 @@ public class NoSyncBuyer implements OrderResult {
 
     /*调用从商店返回订购物品的信息*/
     public String orderGoods() {
-        String goodsState = "--";
-        MyRunnable mr = new MyRunnable();
-        Thread thread = new Thread(mr);
-        thread.start();
+        String goodsState = store.returnOrderGoodsInfo(this);
         System.out.println(goodsState);
         myFeeling();// 测试同步还是异步, 同步需要等待, 异步无需等待
         return goodsState;
@@ -52,25 +48,5 @@ public class NoSyncBuyer implements OrderResult {
     @Override
     public String getOrderResult(String state) {
         return "在" + this.getStore().getName() + "商店订购的" + this.getGoodsName() + "玩具, 目前的预订状态是: " + state;
-    }
-
-    private class MyRunnable implements Runnable{
-
-        public String getResult() {
-            return result;
-        }
-
-        private String result;
-
-        @Override
-        public void run() {
-            try {
-                Thread.sleep(10000);
-                result = store.returnOrderGoodsInfo(NoSyncBuyer.this);// 匿名函数的时候, 无法return 返回值
-                System.out.println(result);
-            } catch (InterruptedException e) {
-                System.out.println("出大事了, 异步回调有问题了" + e.getMessage());
-            }
-        }
     }
 }
