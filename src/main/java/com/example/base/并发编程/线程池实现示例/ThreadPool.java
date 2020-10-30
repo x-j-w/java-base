@@ -1,6 +1,8 @@
 package com.example.base.并发编程.线程池实现示例;
 
-public interface ThreadPool<Job extends Runnable> {
+import java.util.function.Supplier;
+
+public interface ThreadPool<Job extends Supplier> {
 
     // 执行一个job 这个job需要实现runnable接口
     void execute(Job job);

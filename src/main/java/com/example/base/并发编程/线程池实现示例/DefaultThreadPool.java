@@ -5,8 +5,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.Supplier;
 
-public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> {
+public class DefaultThreadPool<Job extends Supplier> implements ThreadPool<Job> {
 
     private static final int MAX_WORKER_NUMBERS = 10;
 
@@ -48,6 +49,7 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
                 jobs.notify();
             }
         }
+
     }
 
     @Override
@@ -123,7 +125,8 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
                 }
                 if (job != null) {
                     try {
-                        job.run();
+                        String str = (String)job.get();
+                        System.out.println(str);
                     } catch (Exception e) {
                         //忽略job执行中的异常
                     }
