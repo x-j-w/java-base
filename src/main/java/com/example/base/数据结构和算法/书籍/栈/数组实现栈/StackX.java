@@ -1,4 +1,4 @@
-package com.example.base.数据结构和算法.书籍.栈;
+package com.example.base.数据结构和算法.书籍.栈.数组实现栈;
 
 public class StackX {
 
