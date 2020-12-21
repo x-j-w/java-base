@@ -1,5 +1,9 @@
 package com.example.base.数据结构和算法.书籍.栈.数组实现栈;
 
+/**
+ * @author jiwei.xue
+ * @date 2020/10/30 16:07
+ */
 public class StackX {
 
     private int maxSize;
