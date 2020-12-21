@@ -106,7 +106,7 @@ public class DefaultThreadPool<Job extends Supplier> implements ThreadPool<Job> 
 
         private volatile boolean running = true;
 
-        @Override
+     @Override
         public void run() {
             while(running) {
                 Job job = null;
