@@ -1,4 +1,4 @@
-package com.example.base.数据结构和算法.书籍.排序.简单排序.冒泡排序;
+package com.example.base.数据结构和算法.书籍.排序.简单排序;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +13,19 @@ public class BubbleSort {
     public static void main(String[] args) {
 
         long[] arr = new long[]{23, 4, 67, 100, 300, 97, 81};
-        bubbleSort(arr);
+        bubbleSort02(arr);
         for (int j = 0; j < arr.length; j++) {
             System.out.println(arr[j] + " ");
         }
         System.out.println("");
     }
 
-    private static void bubbleSort(long[] arr) {
+    /**
+     * 冒泡排序
+     *
+     * @param arr
+     */
+    private static void bubbleSort01(long[] arr) {
         int out, in;
         for (out = arr.length - 1; out > 1; out--) {
             for (in = 0; in < out; in++) {
@@ -31,6 +36,30 @@ public class BubbleSort {
         }
     }
 
+    /**
+     * 冒泡排序
+     * 比较好理解
+     * 外层循环的次数是数组长度 - 1次，内层循环是的次数是外层循环每走一次，内层的比较的个数就会 - 1
+     * @param arr
+     */
+    private static void bubbleSort02(long[] arr) {
+        int i, j;
+        for (i = 0; i < arr.length - 1; i++) {
+            for (j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    swap(arr, j, j + 1);
+                }
+            }
+        }
+    }
+
+    /**
+     * 交换位置
+     *
+     * @param arr
+     * @param one
+     * @param two
+     */
     private static void swap(long[] arr, int one, int two) {
         long temp = arr[one];
         arr[one] = arr[two];
