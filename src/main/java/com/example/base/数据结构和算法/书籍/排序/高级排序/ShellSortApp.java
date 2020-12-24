@@ -1,7 +1,7 @@
 package com.example.base.数据结构和算法.书籍.排序.高级排序;
 
 
-public class ShellSort {
+public class ShellSortApp {
 
     public static void main(String[] args) {
         long[] theArray = {33, 66, 22, 77, 55, 11, 99, 44, 88};
