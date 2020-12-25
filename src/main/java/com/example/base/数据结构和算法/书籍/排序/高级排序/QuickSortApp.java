@@ -49,6 +49,5 @@ public class QuickSortApp {
         long temp = theArray[dex1];
         theArray[dex1] = theArray[dex2];
         theArray[dex2] = temp;
-
     }
 }
