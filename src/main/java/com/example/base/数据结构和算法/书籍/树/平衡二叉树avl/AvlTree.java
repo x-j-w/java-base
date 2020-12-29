@@ -4,6 +4,9 @@ package com.example.base.数据结构和算法.书籍.树.平衡二叉树avl;
  * @author jiwei.xue
  * @date 2020/12/29 11:05
  * 左旋——自己变为右孩子的左孩子；右旋——自己变为左孩子的右孩子； 以上口诀+动图=完美
+ *
+ * https://blog.csdn.net/qq_25343557/article/details/89110319
+ * https://blog.csdn.net/qq_37934101/article/details/81160254
  */
 public class AvlTree<E extends Comparable<E>> {
 
