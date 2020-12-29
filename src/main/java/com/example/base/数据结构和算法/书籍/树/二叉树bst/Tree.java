@@ -1,4 +1,4 @@
-package com.example.base.数据结构和算法.书籍.树.二叉树;
+package com.example.base.数据结构和算法.书籍.树.二叉树bst;
 
 /**
  * @author jiwei.xue
