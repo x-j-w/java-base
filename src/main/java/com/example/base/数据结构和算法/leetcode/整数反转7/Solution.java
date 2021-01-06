@@ -1,4 +1,4 @@
-package com.example.base.数据结构和算法.leetcode.整数反转;
+package com.example.base.数据结构和算法.leetcode.整数反转7;
 
 /**
  * @author jiwei.xue
