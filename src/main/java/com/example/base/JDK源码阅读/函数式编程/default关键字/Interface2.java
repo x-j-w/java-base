@@ -1,4 +1,4 @@
-package com.example.base.JDK.函数式编程.default关键字;
+package com.example.base.JDK源码阅读.函数式编程.default关键字;
 
 public interface Interface2{
     default void helloWorld() {
