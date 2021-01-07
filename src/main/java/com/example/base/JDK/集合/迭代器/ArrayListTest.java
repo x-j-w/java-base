@@ -13,6 +13,6 @@ public class ArrayListTest {
 
         List<String> list = new ArrayList<>();
         list.add("1");
-
+        System.out.println("添加");
     }
 }
