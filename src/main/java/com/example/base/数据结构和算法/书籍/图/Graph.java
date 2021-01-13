@@ -15,6 +15,8 @@ public class Graph {
 
     private int nVerts;
 
+    private StackX theStackX;
+
     public Graph() {
         vertexList = new Vertex[MAX_VERTS];
         adjMat = new int[MAX_VERTS][MAX_VERTS];
@@ -24,6 +26,7 @@ public class Graph {
                 adjMat[j][k] = 0;
             }
         }
+        theStackX = new StackX();
     }
 
     public void addVertex(char lab) {
@@ -37,5 +40,39 @@ public class Graph {
 
     public void displayVertex(int v) {
         System.out.println(vertexList[v].label);
+    }
+
+    /**
+     * 深度优先算法
+     */
+    public void dfs() {
+        vertexList[0].wasVisited = true;
+        displayVertex(0);
+        theStackX.push(0);
+
+        while (!theStackX.isEmpty()) {
+            int v = getAdjUnvisitedVertex(theStackX.peek());
+            if (v == -1) {
+                theStackX.pop();
+            } else {
+                vertexList[v].wasVisited = true;
+                displayVertex(v);
+                theStackX.push(v);
+            }
+        }
+
+        for (int j = 0; j < nVerts; j++) {
+            vertexList[j].wasVisited = false;
+        }
+    }
+
+
+    public int getAdjUnvisitedVertex(int v) {
+        for (int j = 0; j < nVerts; j++) {
+            if (adjMat[v][j] == 1 && vertexList[j].wasVisited == false) {
+                return j;
+            }
+        }
+        return -1;
     }
 }
