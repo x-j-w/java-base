@@ -11,7 +11,7 @@ public class Graph {
 
     private Vertex[] vertexList;
 
-    private int adjMat[][];
+    private int[][] adjMat;
 
     private int nVerts;
 
@@ -69,7 +69,7 @@ public class Graph {
 
     public int getAdjUnvisitedVertex(int v) {
         for (int j = 0; j < nVerts; j++) {
-            if (adjMat[v][j] == 1 && vertexList[j].wasVisited == false) {
+            if (adjMat[v][j] == 1 && !vertexList[j].wasVisited) {
                 return j;
             }
         }
