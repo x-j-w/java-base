@@ -17,6 +17,8 @@ public class Graph {
 
     private StackX theStackX;
 
+    private Queue theQueue;
+
     public Graph() {
         vertexList = new Vertex[MAX_VERTS];
         adjMat = new int[MAX_VERTS][MAX_VERTS];
@@ -61,6 +63,27 @@ public class Graph {
             }
         }
 
+        for (int j = 0; j < nVerts; j++) {
+            vertexList[j].wasVisited = false;
+        }
+    }
+
+    /**
+     * 广度优先算法
+     */
+    public void bfs() {
+        vertexList[0].wasVisited = true;
+        displayVertex(0);
+        theQueue.insert(0);
+        int v2;
+        while (!theQueue.isEmpty()) {
+            int v1 = theQueue.remove();
+            while ((v2 = getAdjUnvisitedVertex(v1)) != -1) {
+                vertexList[v2].wasVisited = true;
+                displayVertex(v2);
+                theQueue.insert(v2);
+            }
+        }
         for (int j = 0; j < nVerts; j++) {
             vertexList[j].wasVisited = false;
         }
