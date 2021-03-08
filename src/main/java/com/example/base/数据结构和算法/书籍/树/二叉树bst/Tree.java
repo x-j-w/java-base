@@ -9,7 +9,7 @@ public class Tree {
     private Node root;
 
     /**
-     * 查找节点
+     * 查找节点的时间取决于这个节点所在的层数 O(logN)
      *
      * @param key
      * @return
@@ -41,7 +41,7 @@ public class Tree {
         Node newNode = new Node();
         newNode.iData = id;
         newNode.fData = dd;
-
+        // 如果root为空，直接赋值给root
         if (root == null) {
             root = newNode;
         } else {
@@ -78,6 +78,7 @@ public class Tree {
         Node parent = root;
         boolean isLeftChild = true;
 
+        // 先判断删除的节点的是左子节点还是右子节点
         while (current.iData != key) {
             parent = current;
             if (key < current.iData) {
@@ -93,7 +94,7 @@ public class Tree {
             }
         }
 
-        // 第一种情况 删除的节点为叶子节点
+        // 第一种情况 删除的节点为叶子节点  当前节点的左子节点和右子节点都是空
         if (current.leftChild == null && current.rightChild == null) {
             if (current == root) {
                 root = null;
@@ -181,7 +182,7 @@ public class Tree {
     private void inOrder(Node localRoot) {
         if (localRoot != null) {
             inOrder(localRoot.leftChild);
-            System.out.println(localRoot.iData + " ");
+            System.out.print(localRoot.iData + " ");
             inOrder(localRoot.rightChild);
         }
     }
@@ -193,7 +194,7 @@ public class Tree {
      */
     private void preOrder(Node localRoot) {
         if (localRoot != null) {
-            System.out.println(localRoot.iData);
+            System.out.print(localRoot.iData + " ");
             preOrder(localRoot.leftChild);
             preOrder(localRoot.rightChild);
         }
@@ -208,7 +209,7 @@ public class Tree {
         if (localRoot != null) {
             posOrder(localRoot.leftChild);
             posOrder(localRoot.rightChild);
-            System.out.println(localRoot.iData);
+            System.out.print(localRoot.iData + " ");
         }
     }
 

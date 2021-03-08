@@ -1,6 +1,8 @@
 package com.example.base.数据结构和算法.书籍.排序.高级排序;
 
-
+/**
+ * 希尔排序是基于插入排序的 增量进行排序的
+ */
 public class ShellSortApp {
 
     public static void main(String[] args) {

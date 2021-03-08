@@ -2,7 +2,7 @@ package com.example.base.数据结构和算法.书籍.排序.高级排序;
 
 public class QuickSortApp {
 
-    public static long[] theArray = new long[]{33, 66, 22, 77, 55, 11, 99, 44, 88};
+    public static long[] theArray = new long[]{77, 66, 22, 88, 55, 11, 99, 33, 44};
 
     public static void main(String[] args) {
         recQuickSort(0, theArray.length - 1);

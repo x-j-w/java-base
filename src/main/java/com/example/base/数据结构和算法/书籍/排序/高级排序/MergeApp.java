@@ -2,6 +2,7 @@ package com.example.base.数据结构和算法.书籍.排序.高级排序;
 
 /**
  * 归并两个有序数组
+ * 对两个有序的数组进行排序
  */
 public class MergeApp {
 

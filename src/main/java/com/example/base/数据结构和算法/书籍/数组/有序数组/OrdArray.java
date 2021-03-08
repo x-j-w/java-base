@@ -31,13 +31,17 @@ public class OrdArray {
 
         while (true) {
             curIn = (lowerBound + upperBound) / 2;
+            // 1、判断当前值是否等于searchKey，如果等于直接返回当前值的索引
             if (a[curIn] == searchKey) {
                 return curIn;
+            // 2、判断最低索引是否大于最高索引，如果大于，则没有找到searchKey，此时直接返回数组元素个数
             } else if (lowerBound > upperBound) {
                 return nElems;
             } else {
+                // 如果当前值小于searchKey，则将最低索引赋值为当前值的索引+1
                 if (a[curIn] < searchKey) {
                     lowerBound = curIn + 1;
+                //  如果当前值大于searchKey，则将最高索引赋值为当前值的索引-1
                 } else {
                     upperBound = curIn - 1;
                 }
@@ -58,11 +62,12 @@ public class OrdArray {
                 break;
             }
         }
+        // 需要定义一个新的变量来
         // TODO 将第一个大于插入的值的后面的所有的数分别向后移动一位
         for (int k = nElems; k > j; k--) {
             a[k] = a[k - 1];
         }
-        //给插入的位置赋值
+        // 给插入的位置赋值
         a[j] = value;
         nElems++;
     }

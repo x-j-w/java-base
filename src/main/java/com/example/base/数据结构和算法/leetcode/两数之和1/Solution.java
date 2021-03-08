@@ -13,7 +13,7 @@ public class Solution {
     public static void main(String[] args) {
 
         int[] nums = {1, 3, 5, 7, 8, 10};
-        int[] ints = new Solution().twoSum02(nums, 12);
+        int[] ints = new Solution().twoSum03(nums, 12);
         for (int i : ints) {
             System.out.println(i);
         }

@@ -4,6 +4,8 @@ package com.example.base.数据结构和算法.书籍.排序.简单排序;
  * @author jiwei.xue
  * @date 2020/12/22 11:14
  * 插入排序的思想: 对数组进行局部排序
+ *      从第一个元素开始循环，和数组前面的元素进行比较一一进行比较，直到找到第一个比当前元素小的元素结束。
+ * 插入排序的时间复杂夫为O()
  */
 public class InsertSort {
 

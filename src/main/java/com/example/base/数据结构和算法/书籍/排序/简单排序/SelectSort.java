@@ -11,7 +11,7 @@ public class SelectSort {
     public static void main(String[] args) {
 
         long[] arr = new long[]{23, 4, 67, 100, 300, 97, 81};
-        selectSort(arr);
+        selectSort2(arr);
         for (int j = 0; j < arr.length; j++) {
             System.out.println(arr[j] + " ");
         }
@@ -24,6 +24,7 @@ public class SelectSort {
      * @param arr
      */
     public static void selectSort(long[] arr) {
+        // 需要min变量来保存最小值
         int out, in, min;
         for (out = 0; out < arr.length - 1; out++) {
             min = out;
@@ -35,6 +36,24 @@ public class SelectSort {
             swap(arr, out, min);
         }
     }
+
+    public static void selectSort2(long[] array) {
+        if (array == null || array.length < 2) {
+            return;
+        }
+
+        for (int i = 0; i < array.length - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[minIndex] ) {
+                    minIndex = j;
+                }
+            }
+            swap(array, i, minIndex);
+        }
+
+    }
+
 
     /**
      * 交换位置

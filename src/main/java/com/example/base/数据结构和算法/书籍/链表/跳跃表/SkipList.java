@@ -5,6 +5,15 @@ import java.util.Random;
 /**
  * @author jiwei.xue
  * @date 2020/12/25 15:21
+ * 高效的查找算法： 有序数组   二叉查找数   平 衡二叉树    跳跃表
+ * 跳跃表： 缺点是存在一定的数据冗余，达到以空间换时间的目的
+ * 特征：
+ *      1、一个跳跃表应该有若干个层（Level）链表组成；
+ *      2、跳跃表中最底层的链表包含所有数据； 每一层链表中的数据都是有序的；
+ *      3、如果一个元素 X 出现在第i层，那么编号比 i 小的层都包含元素 X；
+ *      4、第 i 层的元素通过一个指针指向下一层拥有相同值的元素；
+ *      5、在每一层中，-∞ 和 +∞ 两个元素都出现(分别表示 INT_MIN 和 INT_MAX)；
+ *      6、头指针（head）指向最高一层的第一个元素；
  */
 public class SkipList {
 
@@ -15,7 +24,6 @@ public class SkipList {
     public SkipListEntry head;
 
     public SkipListEntry tail;
-
     public Random r;
 
     /**

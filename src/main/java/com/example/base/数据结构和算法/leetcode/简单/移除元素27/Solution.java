@@ -11,6 +11,9 @@ public class Solution {
         int[] nums = {2, 5, 6, 3, 7, 8, 4, 2, 3, 5};
         int count = removeElement(nums, val);
         System.out.println(count);
+        for (int i = 0; i < nums.length; i++ ) {
+            System.out.print(nums[i] + "  ");
+        }
     }
 
     /**

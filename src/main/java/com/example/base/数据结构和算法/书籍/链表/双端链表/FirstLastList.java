@@ -32,6 +32,9 @@ public class FirstLastList {
      */
     public void insertFirst(long dd) {
         Link newLink = new Link(dd);
+        // 双端链表，在链表头部添加
+        // 如果链表为空的话，则相当于是添加了一个新的连接点，这样first，last都要指向新添加的节点
+        // 如果链表不为空，说明last已经指向尾节点，只需要改变头节点的指向。
         if (isEmpty()) {
             last = newLink;
         }
@@ -45,11 +48,17 @@ public class FirstLastList {
      */
     public void insertLast(long dd) {
         Link newLink = new Link(dd);
+        // 双端链表，在链表尾部添加
+        // 如果链表为空的话，则相当于是添加了一个新的连接点，这样first，last都要指向新添加的节点
+        // 如果链表不为空，说明last已经指向尾节点，只需要改变头节点的指向。
         if (isEmpty()) {
+            // first指向新节点
             first = newLink;
         } else {
+            // last指向新节点
             last.next = newLink;
         }
+        // last指向新节点
         last = newLink;
     }
 
@@ -59,9 +68,11 @@ public class FirstLastList {
      */
     public long deleteFirst() {
         long temp = first.dData;
+        // 如果first.next为空，说明只有一个节点，删除之后链表中不存在节点，所以last指向空。
         if (first.next == null) {
             last = null;
         }
+
         first = first.next;
         return temp;
     }

@@ -16,7 +16,7 @@ public class RecFind {
     }
 
     /**
-     * 递归二分查找
+     * 使用递归二分查找
      *
      * @param searchKey
      * @param lowerBound

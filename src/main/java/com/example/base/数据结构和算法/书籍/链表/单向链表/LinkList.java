@@ -23,6 +23,7 @@ public class LinkList {
      * @param dd
      */
     public void insertFirst(int id, double dd) {
+        // 创建一个新的节点
         Link newLink = new Link(id, dd);
         newLink.next = first;
         first = newLink;

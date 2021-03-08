@@ -6,8 +6,14 @@ public class Queue {
 
     private long[] queArray;
 
+    /**
+     * 队列头部
+     */
     private int front;
 
+    /**
+     * 队列尾部
+     */
     private int rear;
 
     private int nItems;
@@ -25,6 +31,7 @@ public class Queue {
     /**
      * 向队列中插入数据  put item at rear of queue
      * 从队列的尾部插入数据
+     * 队列插入数据的时候都是从尾部开始插入的
      * @param j
      */
     public void insert(long j) {
@@ -38,6 +45,7 @@ public class Queue {
     /**
      * 从队列中移除数据 take item from front of queue
      * 从队列的头部移除插入数据
+     * 队列移除数据的时候都是从头部开始移除的
      * @return
      */
     public long remove() {

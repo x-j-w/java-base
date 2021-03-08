@@ -16,6 +16,7 @@ public class ArrayApp {
         int j;
         long searchKey;
 
+        // 往数组中添加元素
         arr[0] = 77;
         arr[1] = 99;
         arr[2] = 44;
@@ -29,6 +30,7 @@ public class ArrayApp {
 
         nElems = 10;
 
+        // 循环遍历输出数组中的元素
         for (j = 0; j < nElems; j++) {
             System.out.println(arr[j] + " ");
         }

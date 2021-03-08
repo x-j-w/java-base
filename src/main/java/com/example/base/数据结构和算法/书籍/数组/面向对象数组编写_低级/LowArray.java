@@ -15,10 +15,20 @@ public class LowArray {
         a = new long[size];
     }
 
+    /**
+     * set方法 添加元素
+     * @param index
+     * @param value
+     */
     public void setElem(int index, long value) {
         a[index] = value;
     }
 
+    /**
+     * get方法 查找元素
+     * @param index
+     * @return
+     */
     public long getElem(int index) {
         return a[index];
     }

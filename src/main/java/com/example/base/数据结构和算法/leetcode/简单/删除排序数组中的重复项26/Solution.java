@@ -11,9 +11,9 @@ public class Solution {
         int[] nums = {1, 2, 2, 3, 3, 3, 3, 5, 6, 6, 6};
         int number = removeDuplicates(nums);
         System.out.println(number);
-        for (int i = 0; i < nums.length; i++) {
-            System.out.println(nums[i]);
-        }
+//        for (int i = 0; i < nums.length; i++) {
+//            System.out.println(nums[i]);
+//        }
     }
 
     /**

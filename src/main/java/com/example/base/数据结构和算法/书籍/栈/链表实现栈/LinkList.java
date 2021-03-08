@@ -3,6 +3,7 @@ package com.example.base.数据结构和算法.书籍.栈.链表实现栈;
 /**
  * @author jiwei.xue
  * @date 2020/10/30 16:10
+ * 链表实现栈
  */
 public class LinkList {
 

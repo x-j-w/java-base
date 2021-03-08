@@ -8,6 +8,7 @@ public class CallDemo {
 
     public static void main(String[] args) {
 
+
         Caller caller = new Caller();
         caller.call(() -> System.out.println("回调成功"));
     }
